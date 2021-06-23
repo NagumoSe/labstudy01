@@ -32,6 +32,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Local apps
+    'daihugo.apps.DaihugoConfig',
+
+    # サードパーティー  apps　念のため．使う予定ありますか？
+    # 'rest_framework',
+
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,6 +123,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+""" ここから追記 """
+# Fetch Django's project directory
+DJANGO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Fetch the project_root
+PROJECT_ROOT = os.path.dirname(DJANGO_ROOT)
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+""" ここまで追記 """
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

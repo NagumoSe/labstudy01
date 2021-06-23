@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>KSL 大富豪</title>
+    <meta name="description" content="webページの概要" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'kslab_study/favicon/thumb.png' %}"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'daihugo/css/style.css' %}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>大富豪ページへようこそ</h1>
+    </header>
+
+    <div class="flex-row">
+      <aside class="left-side-bar">
+        <h2>右サイドバー<br/>ここいる？</h2>
+      </aside>
+      <main>
+        メインの場所
+      </main>
+      <aside class="right-side-bar">
+        <h2>左サイドバー</h2>
+        何に使おう？チャットとか？
+      </aside>
+    </div>
+    <footer>
+      <p>&copy; 名前_____. 2021.</p>
+    </footer>
+  </body>
+</html>
