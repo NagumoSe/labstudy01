@@ -1,44 +1,32 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+<!-- 継承元を指定 -->
 {% load static %}
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>KSL 大富豪</title>
-    <meta name="description" content="webページの概要" />
-    <!-- favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="{% static 'kslab_study/favicon/thumb.png' %}"
-    />
-    <!-- CSS -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'daihugo/css/style.css' %}"
-    />
-  </head>
+<!-- head部分 -->
+{% block title %} 大富豪トップページ {% endblock %}
+<!-- CSS -->
+{% block CSS %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'daihugo/css/style.css' %}"
+/>
+{% endblock %}
 
-  <body>
-    <header>
-      <h1>大富豪ページへようこそ</h1>
-    </header>
+<!-- body部分 -->
+{% block header %}
+<header>
+  <h1>大富豪ページへようこそ</h1>
+</header>
+{% endblock %}
+{% block main %}
+<div class="flex-row">
+  <!-- includeはtemplateの中を確認！ -->
+  {% include 'daihugo/components/left_side_bar.html' %}
 
-    <div class="flex-row">
-      <aside class="left-side-bar">
-        <h2>右サイドバー<br/>ここいる？</h2>
-      </aside>
-      <main>
-        メインの場所
-      </main>
-      <aside class="right-side-bar">
-        <h2>左サイドバー</h2>
-        何に使おう？チャットとか？
-      </aside>
-    </div>
-    <footer>
-      <p>&copy; 名前_____. 2021.</p>
-    </footer>
-  </body>
-</html>
+  <main>メインの場所</main>
+  
+  <!-- includeはtemplateの中を確認！ -->
+  {% include 'daihugo/components/right-side-bar.html' %}
+</div>
+{% endblock %}
